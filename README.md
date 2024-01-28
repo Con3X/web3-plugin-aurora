@@ -541,13 +541,53 @@ Executing `yarn test aurora.test.ts` would give something like:
  PASS  test/aurora.test.ts (42.118 s)
   AuroraPlugin Tests
     AuroraPlugin can call `web3` endpoints
-      ...
+      ✓ should be able to call `web3_clientVersion` (4264 ms)
+      ✓ should be able to call `web3_sha3` (691 ms)
+    AuroraPlugin can call `net` RPC endpoints
+      ✓ should be able to call `net_listening` method (669 ms)
+      ✓ should be able to call `net_peerCount` method (685 ms)
+      ✓ should be able to call `net_version` method (670 ms)
     AuroraPlugin can call Ethereum standard RPC endpoints
-      ...
+      ✓ should be able to call `eth_accounts` method with expected param (1315 ms)
+      ✓ should be able to call `eth_blockNumber` method with expected param (734 ms)
+      ✓ should be able to call `eth_call` method with expected params (700 ms)
+      ✓ should be able to call `eth_chainId` method with expected param (688 ms)
+      ✓ should be able to call `eth_coinbase` method with expected param (684 ms)
+      ✓ should be able to call `eth_estimateGas` method with expected param (1690 ms)
+      ✓ should be able to call `eth_gasPrice` method with expected param (748 ms)
+      ✓ should be able to call `eth_getBalance` method with expected param (692 ms)
+      ✓ should be able to call `eth_getBlockByHash` method with expected param (3718 ms)
+      ✓ should be able to call `eth_getBlockByNumber` method with expected param (1515 ms)
+      ✓ should be able to call `eth_getBlockTransactionCountByHash` method with expected param (695 ms)
+      ✓ should be able to call `eth_getBlockTransactionCountByNumber` method with expected param (706 ms)
+      ✓ should be able to call `eth_getCode` (777 ms)
+      ✓ should be able to call `eth_getCompilers` (1710 ms)
+      ✓ should be able to call `eth_getFilterChanges` (1989 ms)
+      ✓ should be able to call `eth_getFilterLogs` (1354 ms)
+      ✓ should be able to call `eth_getLogs` (694 ms)
+      ✓ should be able to call `eth_newFilter` (1343 ms)
+      ✓ should be able to call `eth_protocolVersion` (676 ms)
+      ✓ should be able to call `eth_syncing` (625 ms)
+      ✓ should be able to call `eth_uninstallFilter` (3813 ms)
+      ✓ should be able to call `eth_gasPrice` (714 ms)
+      ✓ should be able to call `eth_coinbase` (745 ms)
+      ✓ should be able to call `eth_getBalance` (2826 ms)
+      ✓ should be able to call `eth_getCompilers` (660 ms)
+      ✓ should calling `eth_getProof` throws (1 ms)
+      ✓ should calling `eth_getWork` throws (1 ms)
+      ✓ should have the rest of the methods at web3.aurora.eth all available (6 ms)
+      ✓ should have the unavailable  methods at web3.aurora.eth as undefined (2 ms)
     AuroraPlugin can call `parity` endpoints
-      ...
+      ✓ should be able to call `parity_pendingTransactions` (1857 ms)
     AuroraPlugin can call the `txpool` endpoints
-      ...
+      ○ skipped should be able to call `txpool.status`
+      ○ skipped should be able to call `txpool.inspect`
+      ○ skipped should be able to call `txpool.content`
+
+Test Suites: 1 passed, 1 total
+Tests:       3 skipped, 35 passed, 38 total
+Snapshots:   0 total
+Time:        42.151 s
 ```
 
 

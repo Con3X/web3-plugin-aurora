@@ -33,7 +33,7 @@ async function aurora() {
 aurora();
 ```
 
-You can play with the npm package online at: https://codesandbox.io/p/sandbox/testing-web3-plugin-aurora-v7249s
+You can play with the npm package online at: https://codesandbox.io/p/devbox/testing-web3-plugin-aurora-v7249s?file=%2Findex.js
 
 Supported RPC Methods
 ------------

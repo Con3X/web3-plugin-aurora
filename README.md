@@ -11,12 +11,12 @@ Aurora is an EVM-compatible blockchain built as a smart contract atop NEAR block
 Plugin usage by users
 ------------
 At your typescript project first run:
-`yarn add web3 @conx3/web3-plugin-aurora`
+`yarn add web3 @con3x/web3-plugin-aurora`
 
 And here is how to use the plugin:
 ```ts
 import { Web3 } from 'web3';
-import { AuroraPlugin } from '@conx3/web3-plugin-aurora';
+import { AuroraPlugin } from '@con3x/web3-plugin-aurora';
 
 async function aurora() {
   const web3 = new Web3('https://mainnet.aurora.dev');
@@ -33,7 +33,7 @@ async function aurora() {
 aurora();
 ```
 
-You can play with the npm package online at: https://codesandbox.io/p/sandbox/testing-web3-plugin-aurora-v7249s
+You can play with the npm package online at: https://codesandbox.io/p/devbox/testing-web3-plugin-aurora-v7249s?file=%2Findex.js
 
 Project progress:
 ------------
@@ -43,7 +43,7 @@ Project progress:
 ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/100?dangerColor=ccee00&warningColor=eeff00&successColor=006600) Create NEAR Aurora Plugin and publish it to the `npm` registry
 
 The web3.js plugin for NEAR Aurora has been publish to  
-https://www.npmjs.com/package/@conx3/web3-plugin-aurora and it is useable inside this example playground: https://codesandbox.io/p/sandbox/misty-leftpad-v7249s?file=%2Findex.js. Additionally, some tests has been written to test some of the basic functionality. 
+https://www.npmjs.com/package/@con3x/web3-plugin-aurora and it is useable inside this example playground: https://codesandbox.io/p/devbox/testing-web3-plugin-aurora-v7249s?file=%2Findex.js. Additionally, some tests has been written to test the basic functionality. 
 
 ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/50?dangerColor=ccee00&warningColor=eeff00&successColor=006600) `web3.aurora` is also accessible as `web3.near.aurora`
 
@@ -63,7 +63,7 @@ Some of the custom RPC endpoints available at Aurora Engine are now callable on 
 
 ### NEAR Plugin
 
-There is a web3.js plugin for the NEAR protocol. Check its repository at: https://github.com/conx3/web3-plugin-near
+There is a web3.js plugin for the NEAR protocol. Check its repository at: https://github.com/con3x/web3-plugin-near
 
 Running Tests
 --------------
@@ -123,5 +123,5 @@ Please make sure to update tests as appropriate.
 
 
 
-[npm-url]: https://npmjs.org/package/@conx3/web3-plugin-near
-[downloads-image]: https://img.shields.io/npm/dm/@conx3/web3-plugin-near?label=npm%20downloads
+[npm-url]: https://npmjs.org/package/@con3x/web3-plugin-near
+[downloads-image]: https://img.shields.io/npm/dm/@con3x/web3-plugin-near?label=npm%20downloads

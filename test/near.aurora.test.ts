@@ -1,5 +1,5 @@
 import { Web3 } from 'web3';
-import { NearPlugin } from '@conx3/web3-plugin-near';
+import { NearPlugin } from '@con3x/web3-plugin-near';
 import { AuroraPlugin } from '../src';
 
 // Endpoints for Aurora

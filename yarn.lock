@@ -386,9 +386,9 @@
     eslint-plugin-prettier "^4.2.1"
     prettier "^2.8.7"
 
-"@conx3/web3-plugin-near@^1.0.4":
+"@con3x/web3-plugin-near@^1.0.4":
   version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@conx3/web3-plugin-near/-/web3-plugin-near-1.0.4.tgz#1a052752a975ec6e3e9529071d9f3ce7dcc650b3"
+  resolved "https://registry.yarnpkg.com/@con3x/web3-plugin-near/-/web3-plugin-near-1.0.4.tgz#1a052752a975ec6e3e9529071d9f3ce7dcc650b3"
   integrity sha512-uDNOGB6664iYOzgOgRSJNz3y+HmyhYUepfRoRQH525IvT21Qlb0vXNLO5Iu+CakafEx3oCr26QvSKBV56yB+ag==
   dependencies:
     "@near-js/transactions" "^0.2.1"

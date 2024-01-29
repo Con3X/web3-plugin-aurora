@@ -17,10 +17,13 @@ import { AuroraPlugin } from '../src';
 describe('web3.near.aurora Tests', () => {
 	let web3 = new Web3('https://mainnet.aurora.dev');
 	beforeAll(() => {
-		// @TODO: the way to register the plugins should be further simplified
-		const nearPlugin = new NearPlugin(web3.provider);
-		nearPlugin.registerPlugin(new AuroraPlugin(web3.provider));
+		web3 = new Web3('https://mainnet.aurora.dev');
+
+		const nearPlugin = new NearPlugin();
+		// register the NearPlugin should happen before registering the AuroraPlugin
+		// this will allow the provider to be passed from the Web3 instance to NearPlugin to AuroraPlugin
 		web3.registerPlugin(nearPlugin);
+		nearPlugin.registerPlugin(new AuroraPlugin());
 	});
 
 	afterAll(() => {});
@@ -29,8 +32,8 @@ describe('web3.near.aurora Tests', () => {
 		expect(web3.near.aurora).toBeDefined();
 	});
 
-	it('should call `getBlockNumber` method on `web3.near.aurora`', async () => {
-		const result = await web3.near.aurora.getBlockNumber();
+	it('should call `getBlockNumber` method on `web3.near.aurora.eth`', async () => {
+		const result = await web3.near.aurora.eth.getBlockNumber();
 		expect(typeof result).toBe('bigint');
 
 		// console.log(result);

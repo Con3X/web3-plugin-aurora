@@ -1,6 +1,6 @@
 {
 	"name": "@con3x/web3-plugin-aurora",
-	"version": "2.0.0-alpha.1",
+	"version": "2.0.0-alpha.2",
 	"description": "web3.js plugin for Aurora Engine that is an EVM running atop NEAR protocol",
 	"author": "Muhammad Altabba",
 	"license": "MIT",

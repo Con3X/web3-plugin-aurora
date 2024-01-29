@@ -457,18 +457,18 @@ Here are all RPC methods and how to call them using the plugin. The original tab
   <tr>
     <td>txpool_content</td>
     <td>❌</td>
-    <td class="left-border"><code>web3.aurora.txpool.<wbr />content()</code></td>
+    <td class="left-border"></td>
     <td>Unsupported</td>
   </tr>  <tr>
     <td>txpool_inspect</td>
     <td>❌</td>
-    <td class="left-border"><code>web3.aurora.txpool.<wbr />inspect()</code></td>
+    <td class="left-border"></td>
     <td>Unsupported</td>
   </tr>
   <tr>
     <td>txpool_status</td>
     <td>❌</td>
-    <td class="left-border"><code>web3.aurora.txpool.<wbr />status()</code></td>
+    <td class="left-border"></td>
     <td>Unsupported</td>
   </tr>
   <tr>

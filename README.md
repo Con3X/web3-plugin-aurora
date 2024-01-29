@@ -5,7 +5,7 @@ web3.js plugin for Aurora NEAR engine
 
 This is an npm package containing a web3.js plugin for Aurora NEAR engine.
 
-Aurora is an EVM-compatible blockchain built as a smart contract atop NEAR blockchain. This plugin would leverage Aurora custom RPC methods (https://doc.aurora.dev/evm/rpc/). And it also disable the unsupported methods.
+Aurora is an EVM-compatible blockchain built as a smart contract atop NEAR blockchain. This plugin would leverage Aurora custom RPC methods. And it also do not display the unsupported methods. The Aurora supported RPC methods are listed at: https://doc.aurora.dev/evm/rpc/. And the most updated version is at: https://github.com/aurora-is-near/relayer2-public?tab=readme-ov-file#json-rpc-methods.
 
 
 Plugin usage by users
@@ -456,32 +456,20 @@ Here are all RPC methods and how to call them using the plugin. The original tab
   </tr>
   <tr>
     <td>txpool_content</td>
-    <td>✅</td>
+    <td>❌</td>
     <td class="left-border"><code>web3.aurora.txpool.<wbr />content()</code></td>
-    <td>
-    Geth extension
-    <br />
-    Not available (issue: <a href='https://github.com/aurora-is-near/doc.aurora.dev/issues/94'>doc.aurora.dev/issues/94</a>)
-    </td>
+    <td>Unsupported</td>
   </tr>  <tr>
     <td>txpool_inspect</td>
-    <td>✅</td>
+    <td>❌</td>
     <td class="left-border"><code>web3.aurora.txpool.<wbr />inspect()</code></td>
-    <td>
-    Geth extension
-    <br />
-    Not available (issue: <a href='https://github.com/aurora-is-near/doc.aurora.dev/issues/94'>doc.aurora.dev/issues/94</a>)
-    </td>
+    <td>Unsupported</td>
   </tr>
   <tr>
     <td>txpool_status</td>
-    <td>✅</td>
+    <td>❌</td>
     <td class="left-border"><code>web3.aurora.txpool.<wbr />status()</code></td>
-    <td>
-    Geth extension
-    <br />
-    Not available (issue: <a href='https://github.com/aurora-is-near/doc.aurora.dev/issues/94'>doc.aurora.dev/issues/94</a>)
-    </td>
+    <td>Unsupported</td>
   </tr>
   <tr>
     <td>parity_pending<wbr />Transactions</td>
@@ -579,11 +567,6 @@ Executing `yarn test aurora.test.ts` would give something like:
       ✓ should have the unavailable  methods at web3.aurora.eth as undefined (2 ms)
     AuroraPlugin can call `parity` endpoints
       ✓ should be able to call `parity_pendingTransactions` (1857 ms)
-    AuroraPlugin can call the `txpool` endpoints
-      ○ skipped should be able to call `txpool.status`
-      ○ skipped should be able to call `txpool.inspect`
-      ○ skipped should be able to call `txpool.content`
-
 Test Suites: 1 passed, 1 total
 Tests:       3 skipped, 35 passed, 38 total
 Snapshots:   0 total

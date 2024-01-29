@@ -2,7 +2,6 @@ import { Net, SupportedProviders, Web3Context, Web3EthPluginBase } from 'web3';
 
 import { ExtendedWeb3Eth } from './extended-web3-eth';
 import { ParityRpcMethods } from './parity-rpc-methods';
-import { TxPoolRpcMethods } from './txpool-rpc-methods';
 import { Web3RpcMethods } from './web3-rpc-methods';
 
 /**
@@ -18,8 +17,6 @@ export class AuroraPlugin extends Web3EthPluginBase {
 	public net: Net;
 
 	public eth: ExtendedWeb3Eth;
-
-	public txpool: TxPoolRpcMethods;
 
 	public parity: ParityRpcMethods;
 
@@ -40,8 +37,6 @@ export class AuroraPlugin extends Web3EthPluginBase {
 
 		this.eth = this.use(ExtendedWeb3Eth);
 
-		this.txpool = this.use(TxPoolRpcMethods);
-
 		this.parity = this.use(ParityRpcMethods);
 	}
 
@@ -53,8 +48,6 @@ export class AuroraPlugin extends Web3EthPluginBase {
 		this.net = this.use(Net);
 
 		this.eth = this.use(ExtendedWeb3Eth);
-
-		this.txpool = this.use(TxPoolRpcMethods);
 
 		this.parity = this.use(ParityRpcMethods);
 	}

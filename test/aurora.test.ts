@@ -415,39 +415,4 @@ describe('AuroraPlugin Tests', () => {
 			// console.log(result);
 		});
 	});
-
-	describe.skip('AuroraPlugin can call the `txpool` rpc methods', () => {
-		// The following seems to not be yet implemented in the current version running the main net and test net.
-		//  However, it is marked as completed at:  https://doc.aurora.dev/evm/rpc
-		it('should be able to call `txpool_status method`', async () => {
-			const result = await web3.aurora.txpool.status();
-			expect(typeof result).toBe('object');
-
-			// consider checking more on the result
-
-			// console.log(result);
-		});
-
-		// The following seems to not be yet implemented in the current version running the main net and test net.
-		//  However, it is marked as completed at:  https://doc.aurora.dev/evm/rpc
-		it('should be able to call `txpool_inspect method`', async () => {
-			const result = await web3.aurora.txpool.inspect();
-			expect(typeof result).toBe('object');
-
-			// consider checking more on the result
-
-			// console.log(result);
-		});
-
-		// The following seems to not be yet implemented in the current version running the main net and test net.
-		//  However, it is marked as completed at:  https://doc.aurora.dev/evm/rpc
-		it('should be able to call `txpool_content method`', async () => {
-			const result = await web3.aurora.txpool.content();
-			expect(typeof result).toBe('object');
-
-			// consider checking more on the result
-
-			// console.log(result);
-		});
-	});
 });

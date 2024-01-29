@@ -1,7 +1,7 @@
 import { EthExecutionAPI, HexString, Web3Context, eth } from 'web3';
 
 type AuroraAPI = {
-	// @TODO list the RPC methods that are not listed in EthExecutionAPI
+	// here you can list any custom RPC methods, if they are not already listed in EthExecutionAPI
 };
 
 export class AuroraRawRpcMethods extends Web3Context<
@@ -111,52 +111,3 @@ export class AuroraRawRpcMethods extends Web3Context<
 		return this.sendJsonRpc('eth_uninstallFilter', [filterId]);
 	}
 }
-
-// describe.skip("AuroraPlugin can call the `raw` endpoints", () => {
-
-//   it("should call `rawRpc.netListening` method", async () => {
-//     const result = await web3.aurora.rawRpc.netListening();
-//     expect(result).toBe(true);
-
-//     // console.log(result);
-//   });
-//   it("should call `rawRpc.netPeerCount` method", async () => {
-//     const result = await web3.aurora.rawRpc.netPeerCount();
-//     expect(/^0x[0-9a-fA-F]+$/.test(result)).toBe(true);
-//     expect(BigInt(result)).toBeGreaterThanOrEqual(BigInt(0));
-//     // console.log(result);
-//   });
-//   it("should call `rawRpc.netVersion` method", async () => {
-//     const provider = web3.currentProvider as HttpProvider;
-//     const url = provider['clientUrl']; // Access private property 'clientUrl'
-//     const result = await web3.aurora.rawRpc.netVersion();
-//     if (url.includes("mainnet.aurora.dev")) {
-//       expect(result).toBe("1313161554");
-//     } else if (url.includes("testnet.aurora.dev")) {
-//       expect(result).toBe("1313161555");
-//     }
-
-//     expect(typeof result).toBe('string');
-//     expect(BigInt(result)).toBeGreaterThanOrEqual(0);
-
-//     // console.log(result);
-//   });
-//   it("should call `rawRpc.syncing`", async () => {
-
-//     const result = await web3.aurora.rawRpc.syncing();
-//     expect(result).toBe(false);
-//   });
-
-//   it("should call `rawRpc.uninstallFilter`", async () => {
-
-//     const result = await web3.aurora.rawRpc.uninstallFilter("0xb");
-//     expect(result).toBe(true);
-//   });
-
-// });
-
-//   import { AuroraRawRpcMethods } from "./aurora-rpc-methods";
-
-// public rawRpc: AuroraRawRpcMethods;
-
-// this.rawRpc = this.use(AuroraRawRpcMethods);

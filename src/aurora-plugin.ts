@@ -1,59 +1,55 @@
-import { TransactionInfo, Web3Eth } from 'web3';
+import { Net, SupportedProviders, Web3Context, Web3EthPluginBase } from 'web3';
+
+import { ExtendedWeb3Eth } from './extended-web3-eth';
+import { ParityRpcMethods } from './parity-rpc-methods';
+import { Web3RpcMethods } from './web3-rpc-methods';
 
 /**
  * Aurora Engine plugin for web3.js
- * It would implement the RPC methods listed at https://doc.aurora.dev/evm/rpc
+ * It implements the RPC methods listed at https://doc.aurora.dev/evm/rpc
  * This would be an alternative to using https://github.com/aurora-is-near/aurora.js and a replacement for the deprecated https://github.com/aurora-is-near/near-web3-provider
- * @remarks This is a work in progress. Only a few methods are implemented so far.
  */
-export class AuroraPlugin
-	//TODO: refactor and extend from Web3EthPluginBase
-	extends Web3Eth
-{
+export class AuroraPlugin extends Web3EthPluginBase {
 	public pluginNamespace = 'aurora';
 
+	public web3: Web3RpcMethods;
+
+	public net: Net;
+
+	public eth: ExtendedWeb3Eth;
+
+	public parity: ParityRpcMethods;
+
 	/**
-	 * Use web3.js request manager to call the JSON RPC specifying the method and params
+	 * This method overrides the inherited `link` method from `Web3PluginBase`
+	 * to add the provider to the plugin instance and its namespaces,
+	 * when `Web3.registerPlugin` is called.
 	 *
-	 * @param method RPC method
-	 * @param params Parameters to the method
+	 * @param parentContext - The context to be added to the instance of `ChainlinkPlugin`,
+	 * and by extension, the instance of `Contract`.
 	 */
-	async sendJsonRpc<T>(method: string, params: object): Promise<T> {
-		return this.requestManager.send({
-			method,
-			params,
-		});
+	public link(parentContext: Web3Context) {
+		super.link(parentContext);
+
+		this.web3 = this.use(Web3RpcMethods);
+
+		this.net = this.use(Net);
+
+		this.eth = this.use(ExtendedWeb3Eth);
+
+		this.parity = this.use(ParityRpcMethods);
 	}
 
-	/**
-	 * implementation of `parity_pendingTransactions` RPC method
-	 */
-	async parityPendingTransactions(params?: {
-		limit?: number;
-		filter?: any;
-	}): Promise<TransactionInfo[]> {
-		return this.sendJsonRpc('parity_pendingTransactions', [params]);
-	}
+	constructor(providerOrContext?: string | SupportedProviders) {
+		super(providerOrContext);
 
-	/**
-	 * implementation of `txpool_status` RPC method
-	 */
-	async txpoolStatus(): Promise<any> {
-		return this.sendJsonRpc('txpool_status', []);
-	}
+		this.web3 = this.use(Web3RpcMethods);
 
-	/**
-	 * implementation of `txpool_inspect` RPC method
-	 */
-	async txpoolInspect(): Promise<any> {
-		return this.sendJsonRpc('txpool_inspect', []);
-	}
+		this.net = this.use(Net);
 
-	/**
-	 * implementation of `txpool_content` RPC method
-	 */
-	async txpoolContent(): Promise<any> {
-		return this.sendJsonRpc('txpool_content', []);
+		this.eth = this.use(ExtendedWeb3Eth);
+
+		this.parity = this.use(ParityRpcMethods);
 	}
 }
 
